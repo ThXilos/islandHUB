@@ -1,5 +1,5 @@
 import React,{useState} from 'react'
-import {Link, withRouter} from "react-router-dom"
+import {Link} from "react-router-dom"
 import PropTypes from 'prop-types'
 
 import {connect} from "react-redux";
@@ -8,13 +8,9 @@ import {addExperience} from "../../actions/profile";
 import { Grid, 
     Button, 
     Paper, 
-    Typography,
     makeStyles,
-    Switch,
-    FormControlLabel,
     MenuItem,
     Select,
-    TextField,
     InputLabel} from "@material-ui/core";
 
     const useStyles = makeStyles((theme) => ({
@@ -61,7 +57,7 @@ const AddExperience = ({addExperience,history}) => {
          <Grid container spacing={4} direction="column">
             <Grid item>
             <h1 style={{fontSize:"1rem",marginBottom:"2rem"}}>add<span className="l-sec">EXPERIENCE</span>
-            <span style={{fontSize:"1rem"}} class="material-icons title-dot">stop</span>
+            <span style={{fontSize:"1rem"}} className="material-icons title-dot">stop</span>
             </h1>
             <InputLabel id="demo-simple-select-helper-label">Add some experience:</InputLabel>
              </Grid>

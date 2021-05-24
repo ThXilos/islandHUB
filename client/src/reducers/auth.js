@@ -53,6 +53,7 @@ switch(type){
                 loading: false,
                 user: null,
                 user:{status:""}
+               
             }
         default:
             return state;

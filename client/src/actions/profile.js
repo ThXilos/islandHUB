@@ -1,7 +1,5 @@
 import axios from "axios";
 import {setAlert} from "./alert";
-import React, { useEffect} from "react";
-
 import {
     GET_PROFILE,
     PROFILE_ERROR,
@@ -13,11 +11,7 @@ import {
     UPDATE_LIKES
 } from "./types";
 
-
 //Get current user profile
-
-
-
 export const getCurrentProfile = () => async dispatch =>{
     dispatch({type: LOADER})
     try{
@@ -35,7 +29,6 @@ export const getCurrentProfile = () => async dispatch =>{
         });
     }
 };
-
 //Get all profiles
 export const getProfiles = () => async dispatch =>{
     dispatch({type: LOADER})
@@ -53,7 +46,6 @@ export const getProfiles = () => async dispatch =>{
         });
     }
 };
-
 //Get profile by id
 export const getProfileById = userId => async dispatch =>{
     dispatch({type: LOADER})
@@ -71,8 +63,6 @@ export const getProfileById = userId => async dispatch =>{
             });
         }
     };
-
-
 //Create or update profile.
 export const createProfile = (formData, history, edit = false) => async dispatch =>{
 try{
@@ -104,9 +94,7 @@ if (edit){
     });
 }
 }
-
 //Add Experience
-
 export const addExperience = (formData, history) => async dispatch => {
 
     try{
@@ -135,7 +123,6 @@ export const addExperience = (formData, history) => async dispatch => {
         });
     }
 };
-
 //Delete Experience
 export const deleteExperience = id => async dispatch =>{
     try{
@@ -152,7 +139,6 @@ export const deleteExperience = id => async dispatch =>{
         });
     }
 };
-
 //Delete account and profile.
 export const deleteAccount = () => async dispatch =>{
     if(window.confirm("Are you sure? This can NOT be undone!")){
@@ -170,7 +156,6 @@ export const deleteAccount = () => async dispatch =>{
         });
     }
 };
-
 //Add like
 export const addLike = id => async dispatch =>{
         try{

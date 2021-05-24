@@ -1,4 +1,4 @@
-import React, { useEffect, Fragment } from "react";
+import React, { useEffect} from "react";
 import PropTypes from 'prop-types';
 import {connect} from "react-redux";
 import { Grid, Button,Paper } from "@material-ui/core";
@@ -19,20 +19,9 @@ const Dashboard = ({
   profile:{profile,loading}}) => {
   useEffect(()=>{
     getCurrentProfile();
-  },[]);  
+  },[getCurrentProfile]);  
     //styles
-    const fieldStyle={
-        marginBottom:"1rem"
-    }
-    const selectItem={
-        color:"black"
-    }
-    const paperStyle={
-      padding:"30px 20px",
-    
-      width:"90%"
-  }
-    const paperStyleOut={
+  const paperStyleOut={
         padding:"30px 20px",
         width:400,
         margin:"100px auto"
@@ -54,14 +43,14 @@ const Dashboard = ({
     <Grid container>
     <Paper elevation={15} style={paperStyleOut}>
     <Grid>
-    <h2 style={{fontSize:"1.5rem"}}>dash<span className="l-sec">BOARD</span><span style={{fontSize:"1rem"}} class="material-icons title-dot">stop</span></h2>
+    <h2 style={{fontSize:"1.5rem"}}>dash<span className="l-sec">BOARD</span><span style={{fontSize:"1rem"}} className="material-icons title-dot">stop</span></h2>
     </Grid>
     {profile !==null
     ? <Grid item container direction="column" spacing={4}>
 
         <Paper elevation={10} style={paperStyleIn}>
         <Grid item container direction="column" spacing={4}>
-          <h1 style={{fontSize:"1rem"}}>PROFILE Info<span style={{fontSize:"1rem"}} class="material-icons title-dot">stop</span></h1>
+          <h1 style={{fontSize:"1rem"}}>PROFILE Info<span style={{fontSize:"1rem"}} className="material-icons title-dot">stop</span></h1>
           <h2 style={{paddingLeft:"0.5rem"}}>Welcome, {user && user.name}</h2>
           <ProfileInfo />
           <DashboardActions />

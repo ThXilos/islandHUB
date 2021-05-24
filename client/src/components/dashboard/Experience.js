@@ -1,34 +1,17 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import {connect} from "react-redux";
-import Moment from "react-moment";
 import {deleteExperience} from "../../actions/profile";
-
 import {Link} from "react-router-dom";
 import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
-
 import { Grid, 
     Button, 
-    Paper, 
-    Typography,
-    makeStyles,
-    Switch,
-    FormControlLabel,
-    MenuItem,
-    Select,
-    TextField,
     Chip} from "@material-ui/core";
 
 
 const Experience = ({experience, deleteExperience}) => {
     
-    const paperStyle={
-        padding:"30px 20px",
-        margin:"100px auto 0",
-        width:"90%"
-    }
     const isEmpty = experience.length;
-    
     const experiences = experience.map(exp =>( 
     <Grid key={exp._id}  item>
         <Chip onDelete={() => deleteExperience(exp.id)} color='primary' style={{backgroundColor:exp.expLvl}} label={exp.title} />
@@ -39,7 +22,7 @@ const Experience = ({experience, deleteExperience}) => {
         
         <Grid container spacing={2} direction="column">
         <Grid item>
-        <h1 style={{fontSize:"1rem"}}>EXPERIENCE<span style={{fontSize:"1rem"}} class="material-icons title-dot">stop</span></h1>
+        <h1 style={{fontSize:"1rem"}}>EXPERIENCE<span style={{fontSize:"1rem"}} className="material-icons title-dot">stop</span></h1>
         </Grid>
         {(isEmpty === 0)
         ? <Grid item container direction="column">

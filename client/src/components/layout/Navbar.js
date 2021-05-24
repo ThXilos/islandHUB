@@ -12,16 +12,10 @@ import MenuIcon from '@material-ui/icons/Menu';
 import {connect} from "react-redux";
 import PropTypes from "prop-types";
 import {logout} from "../../actions/auth";
-
 import "../../css/Navbar.css"
-import auth from '../../reducers/auth';
 
 const menuStyle = {
   display:"flex"
-  
-}
-const menuItem ={
-  margingRight:"1rem"
 }
 
 const useStyles = makeStyles((theme) => ({
@@ -43,12 +37,12 @@ const Navbar = ({logout,auth:{isAuthenticated, loading},status,username}) => {
     <div style={menuStyle}>
      <div style={{paddingRight:"1rem"}}>
       <Link style={{color:"black",textDecoration:"none"}} to="/dashboard" >
-      <span class="material-icons">person</span>
+      <span className="material-icons">person</span>
       <span style={{position:"relative",bottom:"0.3rem"}}>{username}</span>
       </Link>
      </div>
      <div>
-      <Link style={{color:"black"}} to="/" onClick={logout}><span class="material-icons">logout</span></Link>
+      <Link style={{color:"black"}} to="/" onClick={logout}><span className="material-icons">logout</span></Link>
      </div>
     </div>
    );
@@ -73,12 +67,12 @@ return (
 <Fragment>
     <AppBar position="fixed" style={{backgroundColor:"#FFFFFF"}}>
     <Toolbar>
-    <IconButton edge="start" className={classes.menuButton} color="black" aria-label="menu">
+    <IconButton edge="start" className={classes.menuButton} color="primary" aria-label="menu">
         <MenuIcon />
     </IconButton>
     <Typography variant="h6" className={classes.title}>
         <Link to="/profiles" style={{ textDecoration: 'none',color:"black" }}>
-        <h1 style={{fontSize:"1rem",position:"relative",bottom:"3px"}}>Tinos<span className="l-sec">work</span>HUB<span class="material-icons title-dot">stop</span></h1>
+        <h1 style={{fontSize:"1rem",position:"relative",bottom:"3px"}}>Tinos<span className="l-sec">work</span>HUB<span className="material-icons title-dot">stop</span></h1>
         </Link>
         </Typography>
     {!loading && (<Fragment> {(isAuthenticated && status==="Active") ? authLinks : guestLinks}</Fragment>)}
@@ -93,7 +87,7 @@ Navbar.propTypes = {
 logout: PropTypes.func.isRequired,
 auth: PropTypes.object.isRequired,
 status: PropTypes.string.isRequired,
-username: PropTypes.string.isRequired,
+username: PropTypes.string
 }
 
 const mapStateToProps = state => ({

@@ -5,19 +5,9 @@ import {deleteAccount} from "../../actions/profile";
 import {connect} from "react-redux";
 //Icon imports
 import EditIcon from "@material-ui/icons/Edit";
-import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
 import DeleteIcon from '@material-ui/icons/Delete';
 //Material UI
-import { Grid, 
-    Button, 
-    Paper, 
-    Typography,
-    makeStyles,
-    Switch,
-    FormControlLabel,
-    MenuItem,
-    Select,
-    TextField} from "@material-ui/core";
+import { Grid, Button} from "@material-ui/core";
 
 
 const DashboardActions = ({deleteAccount}) =>{

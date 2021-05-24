@@ -1,9 +1,7 @@
 import React,{Fragment, useState} from 'react';
-
 import { Grid, 
     Button, 
     Paper, 
-    Typography,
     makeStyles,
     Switch,
     FormControlLabel,
@@ -11,15 +9,10 @@ import { Grid,
     Select,
     TextField,
     InputLabel} from "@material-ui/core";
-
 import {Link, withRouter} from "react-router-dom";
-
-
-
 //connect component to redux
 import {connect} from "react-redux";
 import {createProfile} from "../../actions/profile";
-import {setAlert} from "../../actions/alert";
 import PropTypes from 'prop-types'
 // import "../../css/Register.css";
 
@@ -31,11 +24,7 @@ const useStyles = makeStyles((theme) => ({
       },
     },
   }));
-
-
-
 const CreateProfile = ({createProfile, history}) => {
-
     //styles
     const classes = useStyles();
     const fieldStyle={

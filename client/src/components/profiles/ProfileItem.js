@@ -4,8 +4,6 @@ import {Link} from "react-router-dom"
 
 import { Grid, Button,Paper, Chip, Avatar } from "@material-ui/core";
 import ContactMailIcon from '@material-ui/icons/ContactMail';
-import FormatQuoteIcon from '@material-ui/icons/FormatQuote';
-import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import "./ProfileItem.css"
 
@@ -40,7 +38,7 @@ const ProfileItem = ({profile:{
                 <Grid style={{marginTop:"0.5rem"}} item container wrap="nowrap" justify="space-between">
                 <Grid container spacing={1}>
                 {experience.slice(0, 4).map(exp =>
-                        <Grid item>
+                        <Grid item key={exp._id} >
                             <Chip size="small" key={exp._id} color='primary' style={{backgroundColor:exp.expLvl}} label={`#${exp.title}`} />
                         </Grid>
                          )}
@@ -59,8 +57,8 @@ const ProfileItem = ({profile:{
 
 ProfileItem.propTypes = {
 profile: PropTypes.object.isRequired,
-experience: PropTypes.array.isRequired,
-bumps: PropTypes.array.isRequired,
+experience: PropTypes.array,
+bumps: PropTypes.array
 }
 
 export default ProfileItem

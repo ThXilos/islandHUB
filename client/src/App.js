@@ -1,12 +1,8 @@
 import React,{useEffect} from "react";
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom"; 
-
 import Navbar from "./components/layout/Navbar";
-import Landing from "./components/layout/Landing";
-
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
-
 import Dashboard from "./components/dashboard/Dashboard";
 import CreateProfile from "./components/profile-form/CreateProfile";
 import EditProfile from "./components/profile-form/EditProfile";
@@ -14,13 +10,12 @@ import AddExperience from "./components/profile-form/AddExperience";
 import PrivateRoute from "./components/routing/PrivateRoute";
 import Profiles from "./components/profiles/Profiles";
 import Profile from "./components/profile/Profile";
-
 import {Container} from "@material-ui/core";
 import './css/App.css';
 //Redux
 import {Provider} from "react-redux";
 import store from "./store";
-import Alerts from "./components/layout/Alert";
+import Alerts from "./components/layout/Alerts";
 import setAuthToken from "./utils/setAuthToken";
 import {loadUser} from "./actions/auth";
 

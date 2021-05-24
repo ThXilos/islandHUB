@@ -1,11 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
-// import {removeAlert} from "../../actions/alert"
-//Material-ui
+
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
-//Material-ui
+
 function Alert(props) {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
   }
@@ -32,7 +31,6 @@ alerts: PropTypes.array.isRequired,
 
 }
 const mapStateToProps = state =>({
-    //get the state from root reducer {alert}
 alerts: state.alert
 });
 

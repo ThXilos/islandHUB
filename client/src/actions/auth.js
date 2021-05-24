@@ -1,5 +1,4 @@
 import axios from "axios";
-import {Link, Redirect} from "react-router-dom";
 import {
     REGISTER_SUCCESS,
      REGISTER_FAIL,

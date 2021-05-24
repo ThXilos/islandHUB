@@ -1,14 +1,12 @@
-import React, { useEffect, Fragment } from "react";
+import React from "react";
 import PropTypes from 'prop-types';
 import {connect} from "react-redux";
-import { Grid, Button,Paper } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import {getCurrentProfile} from "../../actions/profile";
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
-import { relativeTimeThreshold } from "moment";
 
 const ProfileInfo = ({
-  getCurrentProfile, 
   mainJobInterest,
   bio,
   instagram,

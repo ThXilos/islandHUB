@@ -1,8 +1,8 @@
-import React,{useEffect,useState} from 'react'
+import React,{useEffect} from 'react'
 import PropTypes from 'prop-types'
 import  {connect} from "react-redux";
 import {Link} from "react-router-dom"
-import {Chip, Grid, Paper, Button, Avatar,Container} from "@material-ui/core";
+import {Grid, Paper, Button, Avatar} from "@material-ui/core";
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import Spinner from "../layout/Spinner";
 import {getProfileById, addLike, removeLike} from "../../actions/profile";

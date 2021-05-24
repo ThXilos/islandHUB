@@ -1,29 +1,20 @@
 import React,{Fragment, useState, useEffect} from 'react';
-
 import { Grid, 
     Button, 
     Paper, 
-    Typography,
     makeStyles,
     Switch,
     FormControlLabel,
     MenuItem,
     Select,
     TextField} from "@material-ui/core";
-
 import {Link, withRouter} from "react-router-dom";
-
 import InputLabel from '@material-ui/core/InputLabel';
-
-import FormHelperText from '@material-ui/core/FormHelperText';
-
 //connect component to redux
 import {connect} from "react-redux";
 import {createProfile, getCurrentProfile} from "../../actions/profile";
-import {setAlert} from "../../actions/alert";
 import PropTypes from 'prop-types'
 // import "../../css/Register.css";
-
 const useStyles = makeStyles((theme) => ({
     root: {
       '& > *': {
@@ -32,9 +23,6 @@ const useStyles = makeStyles((theme) => ({
       },
     },
   }));
-
-
-
 const EditProfile = ({
     profile:{ profile, loading},
     getCurrentProfile,
@@ -73,7 +61,7 @@ const EditProfile = ({
             facebook: loading || !profile.social ? "" : profile.social.facebook
         });
 
-    },[])
+    },[getCurrentProfile,profile.bio,loading,profile.social,profile.mainJobInterest])
 
     const{
        mainJobInterest,
@@ -95,7 +83,7 @@ const EditProfile = ({
             <Paper elevation={20} style={paperStyle}>
             <Grid container direction="column" spacing={2}>
             <Grid item>
-            <h1 style={{fontSize:"1rem",marginBottom:"2rem"}}>edit<span className="l-sec">PROFILE</span><span style={{fontSize:"1rem"}} class="material-icons title-dot">stop</span></h1>
+            <h1 style={{fontSize:"1rem",marginBottom:"2rem"}}>edit<span className="l-sec">PROFILE</span><span style={{fontSize:"1rem"}} className="material-icons title-dot">stop</span></h1>
                 <InputLabel id="demo-simple-select-helper-label">Main Interest</InputLabel>
                 <Select  name="mainJobInterest" value={mainJobInterest} onChange={e => onChange(e)} fullWidth>
                     <MenuItem value="None">

@@ -1,10 +1,8 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { Grid, Button } from "@material-ui/core";
 import {Link, Redirect} from "react-router-dom"
 import {connect} from "react-redux";
 import PropTypes from 'prop-types'
-
-import Spinner from "./Spinner";
 
 function Landing({isAuthenticated,status}) {
   if (isAuthenticated && status==="Active"){
@@ -13,7 +11,7 @@ function Landing({isAuthenticated,status}) {
   return (
     <Grid container align="center" justify="center" direction="column" style={{marginTop:"200px"}} spacing={6}>
       <Grid item>
-      <h1>Tinos<span className="l-sec">work</span>HUB<span class="material-icons title-dot">stop</span></h1>
+      <h1>Tinos<span className="l-sec">work</span>HUB<span className="material-icons title-dot">stop</span></h1>
       <h2>for Tinos island</h2>
       </Grid>
       <Grid item container align="center" justify="center" spacing={3}>
