@@ -1,0 +1,39 @@
+.paperStyle {
+  width: 400px;
+  margin: 0 1rem;
+  padding: 1rem;
+  margin: 0;
+}
+.gridItem {
+  padding: 5px 5px;
+  margin-top: 1rem;
+}
+.nameTitleProfileItem {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  position: relative;
+  top: 5px;
+  color: #aaaaaa;
+  margin-left: 5px;
+}
+.bioText {
+  padding-left: 0px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+.likesCounter {
+  padding: 0;
+  position: relative;
+  top: 4px;
+}
+
+.nameTitle {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: #313131;
+  margin-left: 5px;
+  text-align: left;
+}

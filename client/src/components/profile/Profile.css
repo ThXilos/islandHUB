@@ -1,0 +1,43 @@
+.paperStyle {
+  width: 450px;
+  margin: 0 1rem;
+  padding: 1rem;
+  margin: 0;
+}
+.nameTitleProfile {
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  color: #4b4b4b;
+  margin-left: 5px;
+  text-align: left;
+}
+.nameTitleProfile:hover {
+  color: #000000;
+  cursor: pointer;
+}
+.dateStyle {
+  font-family: 'Roboto', sans-serif;
+  font-size: 10px;
+  font-weight: 300;
+  position: relative;
+  top: 5px;
+  color: #aaaaaa;
+  margin-left: 5px;
+  text-align: left;
+}
+.bioText {
+  padding-left: 0px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+}
+.likesCounter {
+  position: relative;
+  top: 5px;
+}
+.unlikesCounter {
+  position: relative;
+  top: 5px;
+  color: red;
+}
