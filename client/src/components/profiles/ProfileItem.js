@@ -24,7 +24,7 @@ const ProfileItem = ({profile:{
                     <span className="nameTitleProfileItem">{name} <span style={{color:"#0a1931"}}>as</span> {mainJobInterest}</span>
                     </Grid>
                     <Link to={`/profile/${_id}`} style={{textDecoration:"none"}}>
-                        <Button variant="contained" color="secondary" size="small" startIcon={<ContactMailIcon />}>View</Button>
+                    <Button variant="contained" color="secondary" size="small" startIcon={<ContactMailIcon />}>View</Button>
                      </Link>
              </Grid>
                 <div className="gridItem">

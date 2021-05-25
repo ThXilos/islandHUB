@@ -33,7 +33,7 @@ export const getCurrentProfile = () => async dispatch =>{
 export const getProfiles = () => async dispatch =>{
     dispatch({type: LOADER})
     try{
-        const res = await axios.get("api/profile");
+        const res = await axios.get("/api/profile");
         dispatch({
             type: GET_PROFILES,
             payload: res.data
@@ -145,7 +145,7 @@ export const deleteAccount = () => async dispatch =>{
 
     }
     try{
-        const res = await axios.delete(`/api/profile`);
+        await axios.delete(`/api/profile`);
         dispatch({type: CLEAR_PROFILE});
         dispatch({type: ACCOUNT_DELETED});
         dispatch(setAlert("Your account has been deleted.","warning"));
