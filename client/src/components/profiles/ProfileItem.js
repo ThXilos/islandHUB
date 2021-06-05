@@ -8,7 +8,7 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import "./ProfileItem.css"
 
 const ProfileItem = ({profile:{
-    user:{_id,name, avatar},
+    user:{_id, name, avatar},
     mainJobInterest,
     experience,
     bio,

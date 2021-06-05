@@ -1,10 +1,13 @@
+
 import {
     GET_PROFILE,
     PROFILE_ERROR,
     CLEAR_PROFILE,
     UPDATE_PROFILE,
     GET_PROFILES,
-    LOADER,UPDATE_LIKES} from "../actions/types";
+    LOADER,
+    UPDATE_LIKES,
+    UPDATE_ERROR} from "../actions/types";
 
 const initialState = {
     profile: null,
@@ -15,6 +18,7 @@ const initialState = {
 
 export default function(state = initialState, action){
 const {type, payload} = action;
+
 switch(type){
     case GET_PROFILE:
     case UPDATE_PROFILE:
@@ -51,8 +55,13 @@ switch(type){
         case UPDATE_LIKES:
             return{
                 ...state,
-                profiles: state.profiles.map(profile => profile._id === payload.id ? {...profile, bumps: payload.bumps} : profile),
-                loading: false
+                profile: {...state.profile, bumps:payload.bumps} ,
+                loading:false
+            }
+        case UPDATE_ERROR:
+            return{
+                ...state,
+                error: payload
             }
             default:
                 return state;

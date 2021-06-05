@@ -1,16 +1,13 @@
-.paperStyle {
-  width: 450px;
-  margin: 0 1rem;
-  padding: 1rem;
-  margin: 0;
-}
 .nameTitleProfile {
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   font-weight: 300;
   color: #4b4b4b;
   margin-left: 5px;
+  padding: 0px;
   text-align: left;
+  position: relative;
+  bottom: 7px;
 }
 .nameTitleProfile:hover {
   color: #000000;
@@ -18,10 +15,8 @@
 }
 .dateStyle {
   font-family: 'Roboto', sans-serif;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 300;
-  position: relative;
-  top: 5px;
   color: #aaaaaa;
   margin-left: 5px;
   text-align: left;
@@ -40,4 +35,8 @@
   position: relative;
   top: 5px;
   color: red;
+}
+
+.profileButtonStyle {
+  text-decoration: none;
 }

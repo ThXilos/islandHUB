@@ -26,4 +26,5 @@ export const GET_PROFILES = "GET_PROFILES";
 export const LOADER ="LOADER";
 
 export const UPDATE_LIKES = "UPDATE_LIKES";
+export const UPDATE_ERROR = "UPDATE_ERROR";
 

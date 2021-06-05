@@ -8,6 +8,7 @@ import {
     CLEAR_PROFILE,
     GET_PROFILES,
     LOADER,
+    UPDATE_ERROR,
     UPDATE_LIKES
 } from "./types";
 
@@ -160,6 +161,7 @@ export const deleteAccount = () => async dispatch =>{
 export const addLike = id => async dispatch =>{
         try{
             const res = await axios.put(`/api/profile/bump/${id}`);
+            console.log(res);
             dispatch({
                 type: UPDATE_LIKES,
                 payload: {id, bumps: res.data}
@@ -167,7 +169,7 @@ export const addLike = id => async dispatch =>{
         }catch(err){
             console.log(err);
             dispatch({
-                type: PROFILE_ERROR,
+                type: UPDATE_ERROR,
                 payload:{msg:err.response.statusText, status: err.response.status}
             });
         }
@@ -177,12 +179,12 @@ export const addLike = id => async dispatch =>{
             const res = await axios.put(`/api/profile/unbump/${id}`);
             dispatch({
                 type: UPDATE_LIKES,
-                payload: {id, bumps: res.data}
+                payload: {id, bumps:res.data}
             });
         }catch(err){
             console.log(err);
             dispatch({
-                type: PROFILE_ERROR,
+                type: UPDATE_ERROR,
                 payload:{msg:err.response.statusText, status: err.response.status}
             });
         }
