@@ -1,4 +1,5 @@
 import axios from "axios";
+import { set } from "mongoose";
 import {setAlert} from "./alert";
 import {
     GET_PROFILE,
@@ -104,16 +105,19 @@ export const addExperience = (formData, history) => async dispatch => {
                 "Content-Type":"application/json"
             }
         }
+    
     const res = await axios.put("/api/profile/experience",formData, config);
     dispatch({
         type: UPDATE_PROFILE,
         payload: res.data
     });
-    
     dispatch(setAlert("Experience added","success"));
     history.push("/dashboard");
 
     }catch(err){
+        
+        const errMsg = err.response.data.msg;
+        dispatch(setAlert(errMsg,"warning"))
         const errors = err.response.data.errors;
         if(errors){
             errors.forEach(error => dispatch(setAlert(error.msg,"warning")))

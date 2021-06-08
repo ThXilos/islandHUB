@@ -51,7 +51,7 @@ switch(type){
                 token: null,
                 isAuthenticated: false,
                 loading: false,
-                user: null,
+                // user: null,
                 user:{status:""}
                
             }

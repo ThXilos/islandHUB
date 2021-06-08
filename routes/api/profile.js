@@ -135,10 +135,14 @@ const {title,expLvl} = req.body;
 const newExp = {title,expLvl}
 try{
 const profile = await Profile.findOne({user: req.user.id});
+//checking if value of title is already in array.
+const hasExp = profile.experience.some(exp => exp.title === title);
+if (hasExp) return res.status(400).json({msg:"Type of experience already added."});
 //pushing on to the experience Array.
 profile.experience.unshift(newExp);
 await profile.save();
 res.json(profile);
+
 }catch(err){
 console.error(err.message);
 res.status(500).send("Server Error");    

@@ -22,7 +22,7 @@ const Profiles = ({getProfiles, profile:{profiles, loading}}) => {
       :<Grid item container direction="column" justify="flex-end" alignItems="center" spacing={1}>
          {
          profiles.length > 0 
-         ?(profiles.map(profile => (<ProfileItem key={profile._id} profile={profile} />)))
+         ?(profiles.sort((profileA,profileB)=>profileA.bumps.length > profileB.bumps.length ? -1 : 1).map(profile => (<ProfileItem key={profile._id} profile={profile} />)))
          : <Grid item>
            <Paper elevation={15}>
            <p style={{padding:"0"}}>This feels empty...add some experience.</p>
